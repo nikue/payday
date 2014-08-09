@@ -189,7 +189,6 @@ module Payday
             bold_cell(pdf, I18n.t('payday.line_item.amount', :default => "Amount"), :align => :center, :borders => [])]
         invoice.line_items.each do |line|
           table_data << [line.description,
-                         (line.display_quantity || BigDecimal.new(line.quantity.to_s).to_s("F")),
                          number_to_currency(line.amount, invoice)]
         end
 
