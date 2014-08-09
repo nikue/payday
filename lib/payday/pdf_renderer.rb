@@ -20,7 +20,8 @@ module Payday
 
         # set up some default styling
         pdf.font_size(8)
-
+        pdf.font('arial')
+        
         stamp(invoice, pdf)
         company_banner(invoice, pdf)
         bill_to_ship_to(invoice, pdf)
