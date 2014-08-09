@@ -19,7 +19,7 @@ module Payday
         pdf = Prawn::Document.new(:page_size => invoice_or_default(invoice, :page_size))
 
         # set up some default styling
-        pdf.font_size(8)
+        pdf.font_size(12)
         pdf.font_families.update("Times" => {
             :normal => "lib/fonts/times.ttf",
             :italic => "lib/fonts/timesi.ttf",
@@ -86,7 +86,7 @@ module Payday
 
         # render the company details
         table_data = []
-        table_data << [bold_cell(pdf, invoice_or_default(invoice, :company_name).strip, :size => 20)]
+        table_data << [bold_cell(pdf, invoice_or_default(invoice, :company_name).strip, :size => 10)]
 
         invoice_or_default(invoice, :company_details).lines.each { |line| table_data << [line] }
 
