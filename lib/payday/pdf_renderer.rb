@@ -20,7 +20,7 @@ module Payday
 
         # set up some default styling
         pdf.font_size(8)
-        pdf.font('/app/lib/fonts/times.ttf')
+        pdf.font('/lib/fonts/times.ttf')
         
         stamp(invoice, pdf)
         company_banner(invoice, pdf)
