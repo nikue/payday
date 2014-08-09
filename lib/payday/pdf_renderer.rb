@@ -21,10 +21,10 @@ module Payday
         # set up some default styling
         pdf.font_size(8)
         pdf.font_families.update("Times" => {
-            :normal => "lib/fonts/times.ttf'",
-            :italic => "lib/fonts/timesi.ttf'",
-            :bold => "lib/fonts/timesb.ttf'",
-            :bold_italic => "lib/fonts/timesbi.ttf'"
+            :normal => "lib/fonts/times.ttf",
+            :italic => "lib/fonts/timesi.ttf",
+            :bold => "lib/fonts/timesb.ttf",
+            :bold_italic => "lib/fonts/timesbi.ttf"
           })
         pdf.font('Times')
         
