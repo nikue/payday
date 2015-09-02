@@ -220,7 +220,7 @@ module Payday
       def self.totals_lines(invoice, pdf)
         table_data = []
         table_data << [bold_cell(pdf, I18n.t('payday.invoice.total', :default => "Total:"), :size => 12),
-            cell(pdf, number_to_currency(invoice.total, invoice), :size => 12, :align => :right)]
+            cell(pdf, Money.new(invoice.total, invoice.currency).format(:symbol => false, :with_currency => true), :size => 12, :align => :right)]
         table = pdf.make_table(table_data, :cell_style => { :borders => [] })
         pdf.bounding_box([pdf.bounds.width - table.width, pdf.cursor], :width => table.width, :height => table.height + 2) do
           table.draw
