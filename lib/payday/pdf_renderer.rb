@@ -199,7 +199,7 @@ module Payday
             bold_cell(pdf, I18n.t('payday.line_item.amount', :default => "Amount"), :align => :center, :borders => [])]
         invoice.line_items.each do |line|
           table_data << [line.description,
-                         "#{line.amount} #{invoice.currency}"]
+                         Money.new(line.amount, invoice.currency).format(:symbol => false, :with_currency => true)]
         end
 
         pdf.move_cursor_to(pdf.cursor - 20)
